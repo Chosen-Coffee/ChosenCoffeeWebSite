@@ -57,6 +57,7 @@ export default {
           cream: "hsl(var(--coffee-cream))",
           light: "hsl(var(--coffee-light))",
           espresso: "hsl(var(--coffee-espresso))",
+          gold: "hsl(var(--coffee-gold))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
