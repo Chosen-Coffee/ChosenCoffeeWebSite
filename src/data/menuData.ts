@@ -38,6 +38,8 @@ import limonadaCoco from "@/assets/menu/limonada-coco.jpg";
 import aguasSaborizadas from "@/assets/menu/aguas-saborizadas.jpg";
 import pony from "@/assets/menu/pony.jpg";
 import cocaCola from "@/assets/menu/coca-cola.jpg";
+import milo from "@/assets/menu/milo.png";
+
 
 export const menuData: MenuCategory[] = [
   {
@@ -48,7 +50,7 @@ export const menuData: MenuCategory[] = [
       { id: "e1", name: "Tabla de frutas y queso", price: 12000, image: tablaFrutasQueso },
       { id: "e2", name: "Torta de naranja", price: 5000, image: tortaNaranja },
       { id: "e3", name: "Torta de chocolate", price: 7000, image: tortaChocolate },
-    ],
+    ].sort((a, b)=> a.price - b.price),
   },
   {
     id: "especiales",
@@ -62,7 +64,7 @@ export const menuData: MenuCategory[] = [
       { id: "s5", name: "Waffles de pandebono", price: 14400, image: wafflesPandebono },
       { id: "s6", name: "Waffles rancheros con maicito", price: 17000, image: wafflesRancheros },
       { id: "s7", name: "Waffles con helado", price: 17000, image: wafflesHelado },
-    ],
+    ].sort((a, b)=> a.price - b.price),
   },
   {
     id: "bebidas-calientes",
@@ -70,11 +72,11 @@ export const menuData: MenuCategory[] = [
     icon: "☕",
     items: [
       { id: "bc1", name: "Café espresso", price: 4000, image: cafeEspresso },
-      { id: "bc2", name: "Café latte", price: 9000, image: cafeLatte },
-      { id: "bc3", name: "Frapuchino", price: 9000, description: "Con crema chantilly", image: frapuchino },
+      { id: "bc2", name: "Café Chosen Coffee", price: 8000, description: "Tradicional de la casa", image: cafeChosen },
+      { id: "bc3", name: "Café latte", price: 9000, image: cafeLatte },
       { id: "bc4", name: "Capuchino", price: 9000, description: "Vainilla o canela", image: capuchino },
-      { id: "bc5", name: "Café Chosen Coffee", price: 8000, description: "Tradicional de la casa", image: cafeChosen },
-    ],
+      { id: "bc4", name: "Milo", price: 9000, image: milo },
+    ].sort((a, b)=> a.price - b.price),
   },
   {
     id: "tes",
@@ -84,20 +86,21 @@ export const menuData: MenuCategory[] = [
       { id: "t1", name: "Verde con piña", price: 8000, image: teVerdePina },
       { id: "t2", name: "Frutos rojos", price: 8000, image: teFrutosRojos },
       { id: "t3", name: "Matcha con vainilla", price: 8000, image: teMatcha },
-    ],
+    ].sort((a, b)=> a.price - b.price),
   },
   {
     id: "bebidas-frias",
     name: "Bebidas Frías",
     icon: "🧊",
     items: [
-      { id: "bf1", name: "Cerezada", price: 12000, image: cerezada },
-      { id: "bf2", name: "Limonada de hierbabuena", price: 12000, image: limonadaHierbabuena },
-      { id: "bf3", name: "Limonada de coco", price: 12000, image: limonadaCoco },
-      { id: "bf4", name: "Aguas saborizadas", price: 5000, description: "Maracuyá o frutos rojos", image: aguasSaborizadas },
-      { id: "bf5", name: "Pony", price: 3000, image: pony },
-      { id: "bf6", name: "Coca Cola", price: 5000, image: cocaCola },
-    ],
+      { id: "bf1", name: "Frapuchino", price: 9000, description: "Con crema chantilly", image: frapuchino },
+      { id: "bf2", name: "Cerezada", price: 12000, image: cerezada },
+      { id: "bf3", name: "Limonada de hierbabuena", price: 12000, image: limonadaHierbabuena },
+      { id: "bf4", name: "Limonada de coco", price: 12000, image: limonadaCoco },
+      { id: "bf5", name: "Aguas saborizadas", price: 5000, image: aguasSaborizadas },
+      { id: "bf6", name: "Pony", price: 3000, image: pony },
+      { id: "bf7", name: "Coca Cola", price: 5000, image: cocaCola },
+    ].sort((a, b)=> a.price - b.price),
   },
 ];
 
