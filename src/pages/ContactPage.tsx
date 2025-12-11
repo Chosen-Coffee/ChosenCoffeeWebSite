@@ -5,33 +5,33 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Ubicación",
-    content: "Calle 123 #45-67, Centro, Colombia",
-    link: "https://maps.google.com",
+    content: "Cra. 43a #7a-09, Buenaventura, Valle del Cauca",
+    link: "https://www.google.com/maps/place/Iglesia+Cristiana+TAN+SOLO+CREE/@3.8842943,-77.0229158,203m/data=!3m1!1e3!4m6!3m5!1s0x8e37258e2f07dee1:0x46aaa985e9f20924!8m2!3d3.8843171!4d-77.0231036!16s%2Fg%2F11h061b20l?authuser=0&entry=ttu&g_ep=EgoyMDI1MTIwOC4wIKXMDSoASAFQAw%3D%3D",
     linkText: "Ver en Google Maps",
   },
   {
     icon: Clock,
     title: "Horarios",
-    content: "Lunes a Sábado: 7:00 AM - 8:00 PM\nDomingos: 8:00 AM - 6:00 PM",
+    content: "Martes a Viernes: 4:00 PM - 9:00 PM\nSábado & Domingos: 4:00 PM - :00 PM",
   },
   {
     icon: Phone,
     title: "Teléfono",
-    content: "+57 300 123 4567",
-    link: "tel:+573001234567",
+    content: "+57 305 314 2303",
+    link: "tel:+573053142303",
     linkText: "Llamar ahora",
   },
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    content: "+57 300 123 4567",
-    link: "https://wa.me/573001234567",
+    content: "+57 305 314 2303",
+    link: "https://wa.me/573053142303",
     linkText: "Enviar mensaje",
   },
 ];
 
 const socialLinks = [
-  { icon: Instagram, label: "Instagram", href: "https://instagram.com/chosencoffee", handle: "@chosencoffee" },
+  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/chosencoffee07", handle: "@chosencoffee07" },
   { icon: Facebook, label: "Facebook", href: "https://facebook.com/chosencoffee", handle: "Chosen Coffee" },
 ];
 
@@ -129,7 +129,7 @@ export default function ContactPage() {
               Mapa interactivo próximamente
             </p>
             <a
-              href="https://maps.google.com"
+              href="https://www.google.com/maps/place/Iglesia+Cristiana+TAN+SOLO+CREE/@3.8842943,-77.0229158,203m/data=!3m1!1e3!4m6!3m5!1s0x8e37258e2f07dee1:0x46aaa985e9f20924!8m2!3d3.8843171!4d-77.0231036!16s%2Fg%2F11h061b20l?authuser=0&entry=ttu&g_ep=EgoyMDI1MTIwOC4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-hover hover:scale-105"
