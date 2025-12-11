@@ -41,9 +41,9 @@ export function Navbar() {
     <>
       <nav
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md",
           isScrolled || !isHome
-            ? "bg-card/95 backdrop-blur-md shadow-soft"
+            ? "bg-card/95 shadow-soft"
             : "bg-transparent"
         )}
       >
@@ -65,6 +65,7 @@ export function Navbar() {
               <span>Chosen Coffee</span>
             </Link>
 
+            {/* Desktop */}
             <div className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <Link
@@ -102,33 +103,44 @@ export function Navbar() {
           </div>
         </div>
 
+        {/* Mobile */}
         <div
           className={cn(
-            "md:hidden absolute top-full left-0 right-0 transition-all duration-300 overflow-hidden",
+            "md:hidden absolute top-full left-0 right-0 transition-all duration-300 overflow-hidden backdrop-blur-md",
             isOpen
               ? isHome && !isScrolled
-                ? "max-h-64 opacity-100 bg-transparent backdrop-blur-md"
-                : "max-h-64 opacity-100 bg-card/98 backdrop-blur-md shadow-soft"
+                ? // Inicio → deja el diseño EXACTAMENTE igual
+                  "max-h-64 opacity-100 bg-transparent"
+                : "max-h-64 opacity-100 bg-card/95"
               : "max-h-0 opacity-0"
           )}
         >
           <div className="container mx-auto px-4 py-4 flex flex-col gap-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={cn(
-                  "px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200",
-                  isHome && !isScrolled
-                    ? "text-white hover:bg-white/10"
-                    : location.pathname === link.href
-                    ? "bg-secondary/20 text-primary"
-                    : "text-muted-foreground hover:bg-muted hover:text-primary"
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isSelected = location.pathname === link.href;
+
+              return (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={cn(
+                    "px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200",
+                    isHome && !isScrolled
+                      ? isSelected
+                        ? "bg-secondary/20 text-white"
+                        : "text-white hover:bg-white/10"
+                      :
+                    isSelected
+                      ? !isHome 
+                          ? "bg-secondary/20 text-primary" 
+                          :"bg-secondary/20 text-white"
+                      : "text-primary hover:bg-muted/20"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </nav>
