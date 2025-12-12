@@ -40,26 +40,28 @@ export default function HomePage() {
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6 opacity-0 animate-fade-up">
             <span className="inline-block px-5 py-2 rounded-full bg-secondary/30 text-primary-foreground text-sm font-medium backdrop-blur-sm font-dancing text-xl">
+               <h1 className="font-dancing text-4xl md:text-6xl lg:text-5xl font-bold text-primary-foreground leading-tight">
               Bienvenidos a Chosen Coffee
-            </span>
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight">
-              Sabores que inspiran{" "}
-              <span className="text-secondary">tu día</span>
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/90 max-w-xl mx-auto">
-              Un espacio cálido donde cada taza cuenta una historia. Disfruta de nuestras bebidas y platillos hechos con dedicación.
+            </span>
+            <p className="text-lg md:text-xl text-primary-foreground/90 max-w-xl mx-auto font-display">
+              Nos dedicamos a crear experiencias únicas
+              <span className="text-secondary"> para ti.</span>
             </p>
+            {/* <p className="text-lg md:text-xl text-primary-foreground/90 max-w-xl mx-auto">
+               Un lugar donde cada detalle está pensado para inspirar, conectar y fortalecer el alma. Aquí creamos momentos con propósito.
+            </p> */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <Link
                 to="/menu"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-secondary text-secondary-foreground font-semibold text-lg transition-all duration-300 hover:shadow-hover hover:scale-105"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-secondary text-secondary-foreground font-semibold text-lg transition-all duration-300 hover:shadow-hover hover:scale-105 font-display"
               >
                 Ver Menú
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 to="/contacto"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary-foreground/10 text-primary-foreground font-medium backdrop-blur-sm border border-primary-foreground/20 transition-all duration-300 hover:bg-primary-foreground/20"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary-foreground/10 text-primary-foreground font-medium text-lg backdrop-blur-sm border border-primary-foreground/20 transition-all duration-300 hover:bg-primary-foreground/20 font-display"
               >
                 Encuéntranos
               </Link>
@@ -83,7 +85,7 @@ export default function HomePage() {
               ¿Por qué elegirnos?
             </h2>
             <p className="text-muted-foreground max-w-lg mx-auto opacity-0 animate-fade-up stagger-1">
-              En Chosen Coffee nos dedicamos a crear experiencias únicas para ti.
+              En un mundo lleno de distracciones, Chosen Coffee ofrece un refugio. Un lugar donde cada detalle está pensado para inspirar, conectar y fortalecer el alma. aquí creamos momentos con propósito.
             </p>
           </div>
 
