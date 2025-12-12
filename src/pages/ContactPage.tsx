@@ -95,7 +95,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map Placeholder */}
-      <section className="h-80 md:h-96 bg-muted relative overflow-hidden">
+      <section className="h-96 bg-muted relative overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d883.9947271631935!2d-77.0229158!3d3.8842943!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e37258e2f07dee1%3A0x46aaa985e9f20924!2sIglesia%20Cristiana%20TAN%20SOLO%20CREE!5e1!3m2!1ses!2sco!4v1765496395883!5m2!1ses!2sco"
