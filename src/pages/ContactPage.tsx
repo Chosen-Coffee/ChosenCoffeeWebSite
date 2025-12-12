@@ -1,39 +1,7 @@
 import { Layout } from "@/components/Layout";
-import { MapPin, Clock, Phone, MessageCircle, Instagram, Facebook } from "lucide-react";
-
-const contactInfo = [
-  {
-    icon: MapPin,
-    title: "Ubicación",
-    content: "Cra. 43a #7a-09, Buenaventura, Valle del Cauca",
-    link: "https://www.google.com/maps/place/Iglesia+Cristiana+TAN+SOLO+CREE/@3.8842943,-77.0229158,203m/data=!3m1!1e3!4m6!3m5!1s0x8e37258e2f07dee1:0x46aaa985e9f20924!8m2!3d3.8843171!4d-77.0231036!16s%2Fg%2F11h061b20l?authuser=0&entry=ttu&g_ep=EgoyMDI1MTIwOC4wIKXMDSoASAFQAw%3D%3D",
-    linkText: "Ver en Google Maps",
-  },
-  {
-    icon: Clock,
-    title: "Horarios",
-    content: "Martes a Viernes: 4:00 PM - 9:00 PM\nSábado & Domingos: 4:00 PM - :00 PM",
-  },
-  {
-    icon: Phone,
-    title: "Teléfono",
-    content: "+57 305 314 2303",
-    link: "tel:+573053142303",
-    linkText: "Llamar ahora",
-  },
-  {
-    icon: MessageCircle,
-    title: "WhatsApp",
-    content: "+57 305 314 2303",
-    link: "https://wa.me/573053142303",
-    linkText: "Enviar mensaje",
-  },
-];
-
-const socialLinks = [
-  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/chosencoffee07", handle: "@chosencoffee07" },
-  { icon: Facebook, label: "Facebook", href: "https://facebook.com/chosencoffee", handle: "Chosen Coffee" },
-];
+import { MapPin } from "lucide-react";
+import { contactInfo } from "@/data/contactInfo";
+import { socialLinks } from "@/data/socialLinks";
 
 export default function ContactPage() {
   return (
@@ -41,7 +9,7 @@ export default function ContactPage() {
       {/* Header */}
       <section className="pt-28 pb-12 md:pt-32 md:pb-16 bg-card">
         <div className="container mx-auto px-4 text-center">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-primary text-sm font-medium mb-4 opacity-0 animate-fade-up">
+          <span className="inline-block px-5 py-2 rounded-full bg-secondary/20 text-primary text-sm font-medium mb-4 opacity-0 animate-fade-up font-dancing text-xl">
             Encuéntranos
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary mb-4 opacity-0 animate-fade-up stagger-1">
@@ -60,7 +28,10 @@ export default function ContactPage() {
             {contactInfo.map((item, index) => (
               <div
                 key={item.title}
-                className={`menu-card opacity-0 animate-fade-up stagger-${Math.min(index + 1, 5)}`}
+                className={`menu-card opacity-0 animate-fade-up stagger-${Math.min(
+                  index + 1,
+                  5
+                )}`}
               >
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center flex-shrink-0">
@@ -73,6 +44,7 @@ export default function ContactPage() {
                     <p className="text-muted-foreground text-sm whitespace-pre-line">
                       {item.content}
                     </p>
+
                     {item.link && (
                       <a
                         href={item.link}
@@ -112,7 +84,9 @@ export default function ContactPage() {
                 </div>
                 <div className="text-center">
                   <p className="font-medium text-primary">{social.label}</p>
-                  <p className="text-sm text-muted-foreground">{social.handle}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {social.handle}
+                  </p>
                 </div>
               </a>
             ))}
@@ -123,20 +97,15 @@ export default function ContactPage() {
       {/* Map Placeholder */}
       <section className="h-80 md:h-96 bg-muted relative overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center space-y-4">
-            <MapPin className="w-12 h-12 text-secondary mx-auto" />
-            <p className="text-muted-foreground">
-              Mapa interactivo próximamente
-            </p>
-            <a
-              href="https://www.google.com/maps/place/Iglesia+Cristiana+TAN+SOLO+CREE/@3.8842943,-77.0229158,203m/data=!3m1!1e3!4m6!3m5!1s0x8e37258e2f07dee1:0x46aaa985e9f20924!8m2!3d3.8843171!4d-77.0231036!16s%2Fg%2F11h061b20l?authuser=0&entry=ttu&g_ep=EgoyMDI1MTIwOC4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-hover hover:scale-105"
-            >
-              Abrir en Google Maps
-            </a>
-          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d883.9947271631935!2d-77.0229158!3d3.8842943!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e37258e2f07dee1%3A0x46aaa985e9f20924!2sIglesia%20Cristiana%20TAN%20SOLO%20CREE!5e1!3m2!1ses!2sco!4v1765496395883!5m2!1ses!2sco"
+            width="600"
+            height="380"
+            className="border-0 w-full rounded-xl"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </section>
     </Layout>
