@@ -22,7 +22,7 @@ export function MenuNavigation({ activeCategory, onCategoryClick }: MenuNavigati
             )}
           >
             <span className="text-base">{category.icon}</span>
-            <span>{category.name}</span>
+            <span className="font-dancing text-xl">{category.name}</span>
           </button>
         ))}
       </div>

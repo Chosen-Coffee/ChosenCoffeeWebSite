@@ -12,7 +12,7 @@ export function MenuCategory({ category }: MenuCategoryProps) {
         <span className="text-2xl" role="img" aria-hidden="true">
           {category.icon}
         </span>
-        <h3 className="font-display text-2xl md:text-3xl font-semibold text-primary">
+        <h3 className="font-dancing text-2xl md:text-3xl font-semibold text-primary">
           {category.name}
         </h3>
       </div>

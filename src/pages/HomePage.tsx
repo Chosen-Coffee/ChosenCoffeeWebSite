@@ -39,7 +39,7 @@ export default function HomePage() {
         {/* Hero Content */}
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6 opacity-0 animate-fade-up">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/30 text-primary-foreground text-sm font-medium backdrop-blur-sm">
+            <span className="inline-block px-5 py-2 rounded-full bg-secondary/30 text-primary-foreground text-sm font-medium backdrop-blur-sm font-dancing text-xl">
               Bienvenidos a Chosen Coffee
             </span>
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight">

@@ -43,7 +43,7 @@ export default function MenuPage() {
       {/* Header */}
       <section className="pt-28 pb-12 md:pt-32 md:pb-16 bg-card">
         <div className="container mx-auto px-4 text-center">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-primary text-sm font-medium mb-4 opacity-0 animate-fade-up">
+          <span className="inline-block px-5 py-2 rounded-full bg-secondary/20 text-primary text-sm font-medium mb-4 opacity-0 animate-fade-up font-dancing text-xl">
             Nuestra Carta
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary mb-4 opacity-0 animate-fade-up stagger-1">

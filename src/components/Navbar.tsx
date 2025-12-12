@@ -72,7 +72,7 @@ export function Navbar() {
                   key={link.href}
                   to={link.href}
                   className={cn(
-                    "relative text-sm font-medium transition-colors duration-200 py-2",
+                    "relative text-sm font-medium transition-colors duration-200 py-2 font-dancing text-2xl",
                     !isScrolled && isHome
                       ? "text-white hover:text-white"
                       : location.pathname === link.href
@@ -109,7 +109,7 @@ export function Navbar() {
             "md:hidden absolute top-full left-0 right-0 transition-all duration-300 overflow-hidden backdrop-blur-md",
             isOpen
               ? isHome && !isScrolled
-                ? // Inicio → deja el diseño EXACTAMENTE igual
+                ?
                   "max-h-64 opacity-100 bg-transparent"
                 : "max-h-64 opacity-100 bg-card/95"
               : "max-h-0 opacity-0"
@@ -124,7 +124,7 @@ export function Navbar() {
                   key={link.href}
                   to={link.href}
                   className={cn(
-                    "px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200",
+                    "px-4 py-3 rounded-lg text-xl md:text-lg font-medium transition-colors duration-200 font-dancing",
                     isHome && !isScrolled
                       ? isSelected
                         ? "bg-secondary/20 text-white"
