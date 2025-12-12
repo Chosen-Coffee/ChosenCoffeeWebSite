@@ -16,7 +16,7 @@ export function Footer() {
           <div className="space-y-4 text-sm text-primary-foreground/70">
 
             <p>
-              © {new Date().getFullYear()} Chosen Coffee | <strong className="font-dancing text-lg">Develop By: Matt</strong>
+              © {new Date().getFullYear()} Chosen Coffee | <strong className="font-dancing text-lg">Developed By: Matt</strong>
             </p>
 
             <div className="space-y-3 pt-2">
