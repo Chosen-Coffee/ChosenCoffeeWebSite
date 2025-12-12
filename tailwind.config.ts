@@ -14,6 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
+        dancing: ["Dancing Script", "cursive"],
         sans: ["Inter", "system-ui", "sans-serif"],
         display: ["Playfair Display", "Georgia", "serif"],
       },
