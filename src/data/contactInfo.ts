@@ -11,7 +11,7 @@ export const contactInfo = [
   {
     icon: Clock,
     title: "Horarios",
-    content: "Martes a Viernes: 4:00 PM - 9:00 PM\nSábado & Domingos: 4:00 PM - 10:00 PM",
+    content: "Martes a Viernes: 4:00 PM - 9:00 PM\nSábados & Domingos: 4:00 PM - 10:00 PM",
   },
   {
     icon: Phone,
