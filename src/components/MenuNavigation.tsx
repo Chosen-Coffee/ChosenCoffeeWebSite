@@ -6,9 +6,24 @@ interface MenuNavigationProps {
   onCategoryClick: (categoryId: string) => void;
 }
 
-export function MenuNavigation({ activeCategory, onCategoryClick }: MenuNavigationProps) {
+export function MenuNavigation({
+  activeCategory,
+  onCategoryClick
+}: MenuNavigationProps) {
   return (
-    <nav className="sticky top-20 z-40 -mx-4 px-4 py-4 bg-background/95 backdrop-blur-sm border-b border-border/50">
+    <nav
+      className="
+        sticky
+        top-16 md:top-20
+        z-40
+        -mx-4
+        px-4
+        py-3 md:py-4
+        bg-background/95
+        backdrop-blur-sm
+        border-b border-border/50
+      "
+    >
       <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
         {menuData.map((category) => (
           <button
@@ -22,7 +37,9 @@ export function MenuNavigation({ activeCategory, onCategoryClick }: MenuNavigati
             )}
           >
             <span className="text-base">{category.icon}</span>
-            <span className="font-dancing text-xl">{category.name}</span>
+            <span className="font-dancing text-xl">
+              {category.name}
+            </span>
           </button>
         ))}
       </div>
