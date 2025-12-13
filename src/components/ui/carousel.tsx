@@ -49,6 +49,7 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
+    const [showSwipeHint, setShowSwipeHint] = React.useState(true);
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
@@ -102,6 +103,45 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
       };
     }, [api, onSelect]);
 
+    // Autoplay
+    React.useEffect(() => {
+      if (!api) {
+        return;
+      }
+
+      const intervalId = setInterval(() => {
+        if (api.canScrollNext()) {
+          api.scrollNext();
+        } else {
+          api.scrollTo(0);
+        }
+      }, 4000);
+
+      return () => clearInterval(intervalId);
+    }, [api]);
+
+    // Hide swipe hint after first interaction
+    React.useEffect(() => {
+      if (!api) {
+        return;
+      }
+
+      const handleInteraction = () => {
+        setShowSwipeHint(false);
+      };
+
+      api.on("select", handleInteraction);
+      
+      const timer = setTimeout(() => {
+        setShowSwipeHint(false);
+      }, 5000);
+
+      return () => {
+        api?.off("select", handleInteraction);
+        clearTimeout(timer);
+      };
+    }, [api]);
+
     return (
       <CarouselContext.Provider
         value={{
@@ -124,6 +164,15 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
           {...props}
         >
           {children}
+          {showSwipeHint && (
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 md:hidden pointer-events-none z-10">
+              <div className="flex items-center gap-2 bg-black/60 text-white px-4 py-2 rounded-full animate-bounce">
+                <ArrowLeft className="h-4 w-4 animate-pulse" />
+                <span className="text-sm">Desliza</span>
+                <ArrowRight className="h-4 w-4 animate-pulse" />
+              </div>
+            </div>
+          )}
         </div>
       </CarouselContext.Provider>
     );
@@ -175,7 +224,7 @@ const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProp
         variant={variant}
         size={size}
         className={cn(
-          "absolute h-8 w-8 rounded-full",
+          "absolute h-8 w-8 rounded-full hidden md:flex",
           orientation === "horizontal"
             ? "-left-12 top-1/2 -translate-y-1/2"
             : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -203,7 +252,7 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
         variant={variant}
         size={size}
         className={cn(
-          "absolute h-8 w-8 rounded-full",
+          "absolute h-8 w-8 rounded-full hidden md:flex",
           orientation === "horizontal"
             ? "-right-12 top-1/2 -translate-y-1/2"
             : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
