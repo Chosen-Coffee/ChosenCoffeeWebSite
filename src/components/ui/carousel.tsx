@@ -115,7 +115,7 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
         } else {
           api.scrollTo(0);
         }
-      }, 4000);
+      }, 10000);
 
       return () => clearInterval(intervalId);
     }, [api]);
