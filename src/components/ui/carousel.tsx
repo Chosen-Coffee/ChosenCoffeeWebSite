@@ -115,7 +115,7 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
         } else {
           api.scrollTo(0);
         }
-      }, 10000);
+      }, 6000);
 
       return () => clearInterval(intervalId);
     }, [api]);
@@ -134,7 +134,7 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
       
       const timer = setTimeout(() => {
         setShowSwipeHint(false);
-      }, 5000);
+      }, 6000);
 
       return () => {
         api?.off("select", handleInteraction);
