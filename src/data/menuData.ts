@@ -36,10 +36,14 @@ import cerezada from "@/assets/menu/cerezada.jpg";
 import limonadaHierbabuena from "@/assets/menu/limonada-hierbabuena.jpg";
 import limonadaCoco from "@/assets/menu/limonada-coco.jpg";
 import aguasSaborizadas from "@/assets/menu/aguas-saborizadas.jpg";
-import pony from "@/assets/menu/pony.jpg";
-import cocaCola from "@/assets/menu/coca-cola.jpg";
+import cocaCola from "@/assets/menu/coca-cola.png";
 import milo from "@/assets/menu/milo.png";
-
+import quatro from "@/assets/menu/quatro.png";
+import ponyMini from "@/assets/menu/pony-mini.png";
+import premioRojo from "@/assets/menu/premio-rojo.png";
+import croissant from "@/assets/menu/croissant.png";
+import aguaNatural from "@/assets/menu/agua-natural.png";
+import aguaSaborizada from "@/assets/menu/agua-saborizada.png"
 
 export const menuData: MenuCategory[] = [
   {
@@ -47,9 +51,10 @@ export const menuData: MenuCategory[] = [
     name: "Entradas",
     icon: "🧀",
     items: [
-      { id: "e1", name: "Tabla de frutas y queso", price: 12000, image: tablaFrutasQueso },
+      { id: "e1", name: "Tabla de frutas y queso", price: 18000, image: tablaFrutasQueso },
       { id: "e2", name: "Torta de naranja", price: 5000, image: tortaNaranja },
-      { id: "e3", name: "Torta de chocolate", price: 7000, image: tortaChocolate },
+      { id: "e3", name: "Torta de chocolate", price: 8000, image: tortaChocolate },
+      { id: "e4", name: "Croissant", price: 3000, image: croissant },
     ].sort((a, b)=> a.price - b.price),
   },
   {
@@ -57,13 +62,13 @@ export const menuData: MenuCategory[] = [
     name: "Especiales",
     icon: "⭐",
     items: [
-      { id: "s1", name: "Sandwich", price: 22000, image: sandwich },
-      { id: "s2", name: "Crepes de pollo", price: 23000, image: crepesPollo },
-      { id: "s3", name: "Crepes de carne", price: 23000, image: crepesCarne },
-      { id: "s4", name: "Mini hamburguesa \"para ti\"", price: 23000, image: miniHamburguesa },
-      { id: "s5", name: "Waffles de pandebono", price: 14400, image: wafflesPandebono },
-      { id: "s6", name: "Waffles rancheros con maicito", price: 17000, image: wafflesRancheros },
-      { id: "s7", name: "Waffles con helado", price: 17000, image: wafflesHelado },
+      { id: "s1", name: "Sandwich Especial", price: 22000, image: sandwich },
+      { id: "s2", name: "Crepes de pollo", price: 24000, image: crepesPollo },
+      { id: "s3", name: "Crepes de carne", price: 24000, image: crepesCarne },
+      { id: "s4", name: "Hamburguesa \"para ti\"", price: 24000, image: miniHamburguesa },
+      { id: "s5", name: "Waffles de pandebono y arequipe", price: 15000, image: wafflesPandebono },
+      { id: "s6", name: "Waffles rancheros con maicito", price: 20000, image: wafflesRancheros },
+      { id: "s7", name: "Waffles con helado", price: 15000, image: wafflesHelado },
     ].sort((a, b)=> a.price - b.price),
   },
   {
@@ -93,13 +98,16 @@ export const menuData: MenuCategory[] = [
     name: "Bebidas Frías",
     icon: "🧊",
     items: [
-      { id: "bf1", name: "Frapuchino", price: 9000, description: "Con crema chantilly", image: frapuchino },
+      { id: "bf1", name: "Frapuchino", price: 12000, description: "Con crema chantilly", image: frapuchino },
       { id: "bf2", name: "Cerezada", price: 12000, image: cerezada },
       { id: "bf3", name: "Limonada de hierbabuena", price: 12000, image: limonadaHierbabuena },
       { id: "bf4", name: "Limonada de coco", price: 12000, image: limonadaCoco },
-      { id: "bf5", name: "Aguas saborizadas", price: 5000, image: aguasSaborizadas },
-      { id: "bf6", name: "Pony", price: 3000, image: pony },
+      { id: "bf5", name: "Agua Saborizada", price: 5000, image: aguaSaborizada },
+      { id: "bf6", name: "Pony \"mini\"", price: 3000, image: ponyMini },
       { id: "bf7", name: "Coca Cola", price: 5000, image: cocaCola },
+      { id: "bf8", name: "Quatro", price: 3000, image: quatro },
+      { id: "bf9", name: "Premio Rojo", price: 3000, image: premioRojo },
+      { id: "bf10", name: "Agua Natural", price: 3000, image: aguaNatural },
     ].sort((a, b)=> a.price - b.price),
   },
 ];
